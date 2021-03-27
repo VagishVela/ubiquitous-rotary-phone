@@ -17,6 +17,68 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.831" />
+
+    <Button
+        android:id="@+id/walk1m"
+        android:layout_width="140dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="24dp"
+        android:text="Walk 1m"
+        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="233dp"
+        android:layout_height="193dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="61dp"
+        android:src="@drawable/running_man"
+        app:layout_constraintBottom_toTopOf="@+id/walk1m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="271dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="26dp"
+        android:text="Track number of miles walked"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

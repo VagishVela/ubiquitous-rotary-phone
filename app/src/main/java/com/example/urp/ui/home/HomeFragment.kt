@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.urp.MainActivity
 import com.example.urp.R
 
 class HomeFragment : Fragment() {
@@ -29,16 +29,14 @@ class HomeFragment : Fragment() {
             textView.text = it
         })
 
-        val score = root.findViewById<TextView>(R.id.score)
-        val walk1m = root.findViewById<Button>(R.id.walk1m)
-        walk1m.setOnClickListener { testFun(root) }
 
+        val scoreText = root.findViewById<TextView>(R.id.score)
+        val walk1m = root.findViewById<Button>(R.id.walk1m)
+        walk1m.setOnClickListener { scoreText.text = "${++MainActivity.score}" }
+        scoreText.text = "${MainActivity.score}"
         return root
     }
 
-    fun testFun(view: View) {
-//        Toast.makeText(applicationContext, "Simple Button 1", Toast.LENGTH_LONG).show()
-        val walk1m = view.findViewById<Button>(R.id.walk1m)
-        walk1m.text = "${walk1m.text} 1"
-    }
+
+
 }
