@@ -6,33 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
-
     <Button
         android:id="@+id/walk1m"
-        android:layout_width="140dp"
-        android:layout_height="74dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="205dp"
+        android:text="Walk 1m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/walk5m"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="24dp"
-        android:text="Walk 1m"
-        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        android:layout_marginBottom="205dp"
+        android:text="Walk 5m"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/walk10m"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="205dp"
+        android:text="Walk 10m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -68,13 +78,12 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="271dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="26dp"
-        android:text="Track number of miles walked"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="55dp"
+        android:gravity="center"
+        android:text="Level: 1"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
