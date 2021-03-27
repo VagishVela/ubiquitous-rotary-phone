@@ -24,16 +24,29 @@
         android:id="@+id/walk1m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="69dp"
         android:text="Walk 1m"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="106dp"
         android:text="0"
         android:textColor="@color/black"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="115dp" />
+        app:layout_constraintBottom_toTopOf="@+id/walk1m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
