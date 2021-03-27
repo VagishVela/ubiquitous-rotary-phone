@@ -54,13 +54,16 @@ class HomeFragment : Fragment() {
             val point10Button = root.findViewById<Button>(R.id.point10)
             when (MainActivity.activity++) {
                 0 -> {
-                    imageView.setImageResource(R.drawable.waterlogo)
-                    point1Button.text = "Drank 1 Cup"
-                    point5Button.text = "Drank 5 Cups"
-                    point10Button.text = "Drank 10 Cups"
+                    imageView.setImageResource(R.drawable.pushup)
+                    point1Button.text = "Do 5 Pushup"
+                    point5Button.text = "Do 25 Pushup"
+                    point10Button.text = "Do 50 Pushup"
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.bottledwater)
+                    point1Button.text = "Drank 1 Cup"
+                    point5Button.text = "Drank 5 Cups"
+                    point10Button.text = "Drank 10 Cups"
                 }
                 2 -> {
                     imageView.setImageResource(R.drawable.running_man)
@@ -82,6 +85,9 @@ class HomeFragment : Fragment() {
                 0 -> {
                     imageView.setImageResource(R.drawable.bottledwater)
                     MainActivity.activity = 2 // This will change to max num of activities.
+                    point1Button.text = "Drank 1 Cup"
+                    point5Button.text = "Drank 5 Cups"
+                    point10Button.text = "Drank 10 Cups"
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.running_man)
@@ -90,10 +96,10 @@ class HomeFragment : Fragment() {
                     point10Button.text = "Walk 10M"
                 }
                 2 -> {
-                    imageView.setImageResource(R.drawable.waterlogo)
-                    point1Button.text = "Drank 1 Cup"
-                    point5Button.text = "Drank 5 Cups"
-                    point10Button.text = "Drank 10 Cups"
+                    imageView.setImageResource(R.drawable.pushup)
+                    point1Button.text = "Do 5 Pushup"
+                    point5Button.text = "Do 25 Pushup"
+                    point10Button.text = "Do 50 Pushup"
                 }
             }
         }
