@@ -90,4 +90,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/right_arrow"
+        tools:layout_editor_absoluteX="335dp"
+        tools:layout_editor_absoluteY="297dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/left_arrow"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="297dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
