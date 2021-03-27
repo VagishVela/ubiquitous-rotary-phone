@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +27,15 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+
+        val walk1m = root.findViewById<Button>(R.id.walk1m)
+        walk1m.setOnClickListener { addWalkPoints(root) }
         return root
+    }
+
+    fun addWalkPoints(view: View) {
+        val score = view.findViewById<TextView>(R.id.score)
+        score.text = "${score.text.toString().toInt() + 1}"
     }
 }
