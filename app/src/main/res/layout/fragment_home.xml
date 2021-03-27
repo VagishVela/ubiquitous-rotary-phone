@@ -95,15 +95,27 @@
         android:id="@+id/rightArrow"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="110dp"
         android:src="@drawable/right_arrow"
-        tools:layout_editor_absoluteX="335dp"
-        tools:layout_editor_absoluteY="297dp" />
+        app:layout_constraintBottom_toTopOf="@+id/walk10m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="110dp"
         android:src="@drawable/left_arrow"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="297dp" />
+        app:layout_constraintBottom_toTopOf="@+id/walk1m"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 </androidx.constraintlayout.widget.ConstraintLayout>
