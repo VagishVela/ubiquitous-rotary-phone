@@ -49,15 +49,24 @@ class HomeFragment : Fragment() {
         val rightArrow = root.findViewById<ImageView>(R.id.rightArrow)
         rightArrow.setOnClickListener {
             val imageView = root.findViewById<ImageView>(R.id.imageView)
+            val point1Button = root.findViewById<Button>(R.id.point1)
+            val point5Button = root.findViewById<Button>(R.id.point5)
+            val point10Button = root.findViewById<Button>(R.id.point10)
             when (MainActivity.activity++) {
                 0 -> {
                     imageView.setImageResource(R.drawable.waterlogo)
+                    point1Button.text = "Drank 1 Cup"
+                    point5Button.text = "Drank 5 Cups"
+                    point10Button.text = "Drank 10 Cups"
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.bottledwater)
                 }
                 2 -> {
                     imageView.setImageResource(R.drawable.running_man)
+                    point1Button.text = "Walk 1M"
+                    point5Button.text = "Walk 5M"
+                    point10Button.text = "Walk 10M"
                     MainActivity.activity = 0
                 }
             }
@@ -66,6 +75,9 @@ class HomeFragment : Fragment() {
         val leftArrow = root.findViewById<ImageView>(R.id.leftArrow)
         leftArrow.setOnClickListener {
             val imageView = root.findViewById<ImageView>(R.id.imageView)
+            val point1Button = root.findViewById<Button>(R.id.point1)
+            val point5Button = root.findViewById<Button>(R.id.point5)
+            val point10Button = root.findViewById<Button>(R.id.point10)
             when (MainActivity.activity--) {
                 0 -> {
                     imageView.setImageResource(R.drawable.bottledwater)
@@ -73,9 +85,15 @@ class HomeFragment : Fragment() {
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.running_man)
+                    point1Button.text = "Walk 1M"
+                    point5Button.text = "Walk 5M"
+                    point10Button.text = "Walk 10M"
                 }
                 2 -> {
                     imageView.setImageResource(R.drawable.waterlogo)
+                    point1Button.text = "Drank 1 Cup"
+                    point5Button.text = "Drank 5 Cups"
+                    point10Button.text = "Drank 10 Cups"
                 }
             }
         }
