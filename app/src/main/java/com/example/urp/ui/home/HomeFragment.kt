@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.urp.MainActivity
 import com.example.urp.R
@@ -29,16 +28,16 @@ class HomeFragment : Fragment() {
 //        })
 
         val scoreText = root.findViewById<TextView>(R.id.score)
-        val walk1m = root.findViewById<Button>(R.id.walk1m)
+        val walk1m = root.findViewById<Button>(R.id.point1)
         walk1m.setOnClickListener { scoreText.text = "${++MainActivity.score}" }
 
-        val walk5m = root.findViewById<Button>(R.id.walk5m)
+        val walk5m = root.findViewById<Button>(R.id.point5)
         walk5m.setOnClickListener {
             MainActivity.score += 5
             scoreText.text = "${MainActivity.score}"
         }
 
-        val walk10m = root.findViewById<Button>(R.id.walk10m)
+        val walk10m = root.findViewById<Button>(R.id.point10)
         walk10m.setOnClickListener {
             MainActivity.score += 10
             scoreText.text = "${MainActivity.score}"
