@@ -1,6 +1,8 @@
 package com.example.urp.ui.home
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.urp.MainActivity
@@ -140,6 +143,11 @@ class HomeFragment : Fragment() {
                     activityName.text = "Don't forget to stretch!"
                 }
             }
+        }
+
+        val levelinfo = root.findViewById<TextView>(R.id.levelInfo)
+        scoreText.doOnTextChanged { text, start, before, count ->
+            levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
         }
 
         return root
