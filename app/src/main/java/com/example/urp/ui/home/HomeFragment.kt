@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.urp.MainActivity
@@ -81,6 +83,13 @@ class HomeFragment : Fragment() {
                     point5Button.text = "Do 25 Situps"
                     point10Button.text = "Do 50 Situps"
                     activityName.text = "Do some situps!"
+                }
+                4 -> {
+                    imageView.setImageResource(R.drawable.stretch)
+                    point1Button.text = "Stretch 30 secs"
+                    point5Button.text = "Stretch 1 min"
+                    point10Button.text = "Stretch 2 mins"
+                    activityName.text = "Don't forget to stretch!"
                     MainActivity.activity = 0
                 }
             }
@@ -100,7 +109,7 @@ class HomeFragment : Fragment() {
                     point5Button.text = "Do 25 Pushup"
                     point10Button.text = "Do 50 Pushup"
                     activityName.text = "Do some pushups!"
-                    MainActivity.activity = 3 // This will change to max num of activities.
+                    MainActivity.activity = 4 // This will change to max num of activities.
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.glass_of_water)
@@ -122,6 +131,13 @@ class HomeFragment : Fragment() {
                     point5Button.text = "Do 25 Situps"
                     point10Button.text = "Do 50 Situps"
                     activityName.text = "Do some situps!"
+                }
+                4 -> {
+                    imageView.setImageResource(R.drawable.stretch)
+                    point1Button.text = "Stretch 30 secs"
+                    point5Button.text = "Stretch 1 min"
+                    point10Button.text = "Stretch 2 mins"
+                    activityName.text = "Don't forget to stretch!"
                 }
             }
         }
