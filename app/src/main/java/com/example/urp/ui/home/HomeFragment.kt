@@ -30,12 +30,12 @@ class HomeFragment : Fragment() {
 
 
         val walk1m = root.findViewById<Button>(R.id.walk1m)
-        walk1m.setOnClickListener { addWalkPoints(root) }
+        walk1m.setOnClickListener { addPoints(root, 1) }
         return root
     }
 
-    fun addWalkPoints(view: View) {
+    fun addPoints(view: View, num: Int) {
         val score = view.findViewById<TextView>(R.id.score)
-        score.text = "${score.text.toString().toInt() + 1}"
+        score.text = "${score.text.toString().toInt() + num}"
     }
 }
