@@ -150,6 +150,14 @@ class HomeFragment : Fragment() {
             levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
         }
 
+        val newDay = root.findViewById<Button>(R.id.newDay)
+        newDay.setOnClickListener {
+            MainActivity.score = 0
+            scoreText.text = "${MainActivity.score}"
+            levelinfo.text = "Level: 0"
+
+        }
+
         return root
     }
 }
