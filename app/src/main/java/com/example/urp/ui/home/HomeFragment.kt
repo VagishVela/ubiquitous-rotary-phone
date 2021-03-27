@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -44,6 +45,42 @@ class HomeFragment : Fragment() {
         }
 
         scoreText.text = "${MainActivity.score}"
+
+        // Arrows for moving
+        val rightArrow = root.findViewById<ImageView>(R.id.rightArrow)
+        rightArrow.setOnClickListener {
+            val imageView = root.findViewById<ImageView>(R.id.imageView)
+            when (MainActivity.activity++) {
+                0 -> {
+                    imageView.setImageResource(R.drawable.waterlogo)
+                }
+                1 -> {
+                    imageView.setImageResource(R.drawable.bottledwater)
+                }
+                2 -> {
+                    imageView.setImageResource(R.drawable.running_man)
+                    MainActivity.activity = 0
+                }
+            }
+        }
+
+        val leftArrow = root.findViewById<ImageView>(R.id.leftArrow)
+        leftArrow.setOnClickListener {
+            val imageView = root.findViewById<ImageView>(R.id.imageView)
+            when (MainActivity.activity--) {
+                0 -> {
+                    imageView.setImageResource(R.drawable.bottledwater)
+                    MainActivity.activity = 2 // This will change to max num of activities.
+                }
+                1 -> {
+                    imageView.setImageResource(R.drawable.running_man)
+                }
+                2 -> {
+                    imageView.setImageResource(R.drawable.waterlogo)
+                }
+            }
+        }
+
         return root
     }
 }
