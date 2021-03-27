@@ -90,10 +90,11 @@
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="55dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="45dp"
         android:gravity="center"
         android:text="Level: 1"
         android:textSize="20sp"
+        android:textAppearance="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -127,4 +128,21 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/activityName"
+        android:layout_width="338dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Go out and walk!"
+        android:textSize="28sp"
+        android:textAppearance="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/point5"
+        app:layout_constraintVertical_bias="0.128" />
 </androidx.constraintlayout.widget.ConstraintLayout>
