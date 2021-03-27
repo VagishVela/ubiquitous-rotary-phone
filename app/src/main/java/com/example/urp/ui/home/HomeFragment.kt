@@ -17,12 +17,12 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -30,13 +30,13 @@ class HomeFragment : Fragment() {
         })
 
 
+        val scoreText = root.findViewById<TextView>(R.id.score)
         val walk1m = root.findViewById<Button>(R.id.walk1m)
-        walk1m.setOnClickListener { addPoints(root, 1) }
+        walk1m.setOnClickListener { scoreText.text = "${++MainActivity.score}" }
+        scoreText.text = "${MainActivity.score}"
         return root
     }
 
-    fun addPoints(view: View, num: Int) {
-        MainActivity.score += num
-        view.findViewById<TextView>(R.id.score).text = MainActivity.score.toString()
-    }
+
+
 }
