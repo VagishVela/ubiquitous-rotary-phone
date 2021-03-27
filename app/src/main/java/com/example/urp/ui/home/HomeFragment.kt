@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.urp.MainActivity
 import com.example.urp.R
 
 class HomeFragment : Fragment() {
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
     }
 
     fun addPoints(view: View, num: Int) {
-        val score = view.findViewById<TextView>(R.id.score)
-        score.text = "${score.text.toString().toInt() + num}"
+        MainActivity.score += num
+        view.findViewById<TextView>(R.id.score).text = MainActivity.score.toString()
     }
 }
