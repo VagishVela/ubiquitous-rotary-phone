@@ -28,15 +28,14 @@ class HomeFragment : Fragment() {
             textView.text = it
         })
 
-        val score = root.findViewById<TextView>(R.id.score)
+
         val walk1m = root.findViewById<Button>(R.id.walk1m)
-        walk1m.setOnClickListener { testFun(root) }
+        walk1m.setOnClickListener { addWalkPoints(root) }
         return root
     }
 
-    fun testFun(view: View) {
-//        Toast.makeText(applicationContext, "Simple Button 1", Toast.LENGTH_LONG).show()
-        val walk1m = view.findViewById<Button>(R.id.walk1m)
-        walk1m.text = "${walk1m.text} 1"
+    fun addWalkPoints(view: View) {
+        val score = view.findViewById<TextView>(R.id.score)
+        score.text = "${score.text.toString().toInt() + 1}"
     }
 }
