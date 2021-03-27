@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +27,16 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        val score = root.findViewById<TextView>(R.id.score)
+        val walk1m = root.findViewById<Button>(R.id.walk1m)
+        walk1m.setOnClickListener { testFun(root) }
         return root
+    }
+
+    fun testFun(view: View) {
+//        Toast.makeText(applicationContext, "Simple Button 1", Toast.LENGTH_LONG).show()
+        val walk1m = view.findViewById<Button>(R.id.walk1m)
+        walk1m.text = "${walk1m.text} 1"
     }
 }

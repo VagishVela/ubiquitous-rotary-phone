@@ -28,15 +28,5 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val score = findViewById<TextView>(R.id.score)
-        val walk1m = findViewById<Button>(R.id.walk1m)
-
-        walk1m.setOnClickListener(object : OnClickListener {
-            override fun onClick(view: View?) {
-                var oldScore = score.getText().toString().toInt()
-                score.setText(++oldScore)
-            }
-        })
-
     }
 }
