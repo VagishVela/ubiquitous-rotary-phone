@@ -78,7 +78,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="69dp"
         android:layout_marginBottom="220dp"
-        android:src="@drawable/running_man"
+        android:src="@drawable/running"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
