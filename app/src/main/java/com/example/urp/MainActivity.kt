@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var score = 0
         var activity = 0
+        val activityScores = IntArray(5)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

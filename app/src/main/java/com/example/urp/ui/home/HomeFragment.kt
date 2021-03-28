@@ -1,16 +1,13 @@
 package com.example.urp.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -20,6 +17,7 @@ import com.example.urp.R
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,18 +28,23 @@ class HomeFragment : Fragment() {
 
         val scoreText = root.findViewById<TextView>(R.id.score)
         val walk1m = root.findViewById<Button>(R.id.point1)
-        walk1m.setOnClickListener { scoreText.text = "${++MainActivity.score}" }
+        walk1m.setOnClickListener {
+            scoreText.text = "${++MainActivity.score}"
+            MainActivity.activityScores[MainActivity.activity]++
+        }
 
         val walk5m = root.findViewById<Button>(R.id.point5)
         walk5m.setOnClickListener {
             MainActivity.score += 5
             scoreText.text = "${MainActivity.score}"
+            MainActivity.activityScores[MainActivity.activity] += 5
         }
 
         val walk10m = root.findViewById<Button>(R.id.point10)
         walk10m.setOnClickListener {
             MainActivity.score += 10
             scoreText.text = "${MainActivity.score}"
+            MainActivity.activityScores[MainActivity.activity] += 10
         }
 
         scoreText.text = "${MainActivity.score}"
@@ -150,19 +153,21 @@ class HomeFragment : Fragment() {
         }
 
         val levelinfo = root.findViewById<TextView>(R.id.levelInfo)
-        levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
+        levelinfo.text = "Level: ${MainActivity.score / 10}"
 
-        scoreText.doOnTextChanged { text, start, before, count ->
-            levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
+        scoreText.doOnTextChanged { _, _, _, _ ->
+            levelinfo.text = "Level: ${MainActivity.score / 10}"
         }
 
         val newDay = root.findViewById<Button>(R.id.newDay)
         val previousDayText = root.findViewById<TextView>(R.id.previousDayText)
         newDay.setOnClickListener {
-            previousDayText.text = "You reached level ${(MainActivity.score/10).toInt()} yesterday!"
+            previousDayText.text = "You reached level ${MainActivity.score / 10} yesterday!"
             MainActivity.score = 0
             scoreText.text = "${MainActivity.score}"
             levelinfo.text = "Level: 0"
+            for (i in MainActivity.activityScores.indices)
+                MainActivity.activityScores[i] = 0
         }
 
         return root
