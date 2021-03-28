@@ -12,8 +12,12 @@ import com.anychart.AnyChart
 import com.anychart.AnyChartView
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
+import com.example.urp.MainActivity
 import com.example.urp.MainActivity.Companion.activityScores
+import com.example.urp.MainActivity.Companion.dailyScores
 import com.example.urp.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 class DashboardFragment : Fragment() {
     private lateinit var dashboardViewModel: DashboardViewModel
@@ -29,7 +33,6 @@ class DashboardFragment : Fragment() {
         // Pie chart for each activity's score
         var allZero = true
         for (activityScore in activityScores) if (activityScore != 0) allZero = false
-
         if (allZero) for (i in activityScores.indices) activityScores[i] = 1
 
         val pie = AnyChart.pie()
@@ -44,27 +47,36 @@ class DashboardFragment : Fragment() {
         if (allZero) for (i in activityScores.indices) activityScores[i] = 0
 
         // Column chart perhaps for recent daily scores
+        val dailyScoresClone: Queue<Int> = copy(dailyScores)
         val columnChart = AnyChart.column()
         val columnData: MutableList<DataEntry> = ArrayList()
-        columnData.add(ValueDataEntry("Day 1", activityScores[0]))
-        columnData.add(ValueDataEntry("Day 2", activityScores[1]))
-        columnData.add(ValueDataEntry("Day 3", activityScores[2]))
-        columnData.add(ValueDataEntry("Day 4", activityScores[3]))
-        columnData.add(ValueDataEntry("Day 5", activityScores[4]))
+        if (!dailyScoresClone.isEmpty())
+            columnData.add(ValueDataEntry("Day 1", dailyScoresClone.poll()))
+        if (!dailyScoresClone.isEmpty())
+            columnData.add(ValueDataEntry("Day 2", dailyScoresClone.poll()))
+        if (!dailyScoresClone.isEmpty())
+            columnData.add(ValueDataEntry("Day 3", dailyScoresClone.poll()))
+        if (!dailyScoresClone.isEmpty())
+            columnData.add(ValueDataEntry("Day 4", dailyScoresClone.poll()))
+        if (!dailyScoresClone.isEmpty())
+            columnData.add(ValueDataEntry("Day 5", dailyScoresClone.poll()))
         columnChart.data(columnData)
 
         // Line chart perhaps for overall daily scores
         val lineChart = AnyChart.line()
         val lineData: MutableList<DataEntry> = ArrayList()
-        lineData.add(ValueDataEntry("Date 1", activityScores[0]))
-        lineData.add(ValueDataEntry("Date 2", activityScores[1]))
-        lineData.add(ValueDataEntry("Date 3", activityScores[2]))
-        lineData.add(ValueDataEntry("Date 4", activityScores[3]))
-        lineData.add(ValueDataEntry("Date 5", activityScores[4]))
+        for ((i, dailyScore) in MainActivity.overallDailyScores.withIndex())
+            lineData.add(ValueDataEntry("Date ${i + 1}", dailyScore))
         lineChart.data(lineData)
 
-        val anyChartView = root.findViewById(R.id.any_chart_view) as AnyChartView
-        anyChartView.setChart(pie)
+        val pieChartView = root.findViewById(R.id.any_chart_view) as AnyChartView
+        pieChartView.setChart(pie)
+        val columnChartView = root.findViewById(R.id.any_chart_view1) as AnyChartView
+        columnChartView.setChart(columnChart)
+        val lineChartView = root.findViewById(R.id.any_chart_view2) as AnyChartView
+        lineChartView.setChart(lineChart)
         return root
     }
+
+    private fun copy(queue: Queue<Int>) = LinkedList<Int>(queue)
 }

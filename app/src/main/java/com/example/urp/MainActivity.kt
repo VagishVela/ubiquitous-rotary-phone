@@ -11,12 +11,16 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.*
+import kotlin.collections.ArrayDeque
 
 class MainActivity : AppCompatActivity() {
     companion object {
         var score = 0
         var activity = 0
         val activityScores = IntArray(5)
+        val dailyScores: Queue<Int> = LinkedList<Int>()
+        val overallDailyScores = LinkedList<Int>()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +32,11 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
-        val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

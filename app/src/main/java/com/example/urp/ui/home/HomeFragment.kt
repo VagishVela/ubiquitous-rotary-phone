@@ -159,6 +159,9 @@ class HomeFragment : Fragment() {
         val previousDayText = root.findViewById<TextView>(R.id.previousDayText)
         newDay.setOnClickListener {
             previousDayText.text = "You reached level ${MainActivity.score / 10} yesterday!"
+            if (MainActivity.dailyScores.size >= 5) MainActivity.dailyScores.poll()
+            MainActivity.dailyScores.offer(MainActivity.score)
+            MainActivity.overallDailyScores.add(MainActivity.score)
             MainActivity.score = 0
             scoreText.text = "${MainActivity.score}"
             levelinfo.text = "Level: 0"
@@ -166,6 +169,7 @@ class HomeFragment : Fragment() {
                 MainActivity.activityScores[i] = 0
         }
 
+        if (MainActivity.dailyScores.isEmpty()) MainActivity.dailyScores.offer(0)
         return root
     }
 }
