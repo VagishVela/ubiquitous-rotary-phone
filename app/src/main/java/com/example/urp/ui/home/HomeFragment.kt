@@ -149,11 +149,12 @@ class HomeFragment : Fragment() {
         }
 
         val newDay = root.findViewById<Button>(R.id.newDay)
+        val previousDayText = root.findViewById<TextView>(R.id.previousDayText)
         newDay.setOnClickListener {
+            previousDayText.text = "You reached level ${(MainActivity.score/10).toInt()} yesterday!"
             MainActivity.score = 0
             scoreText.text = "${MainActivity.score}"
             levelinfo.text = "Level: 0"
-
         }
 
         return root

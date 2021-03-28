@@ -159,4 +159,18 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/previousDayText"
+        android:layout_width="283dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="20sp"
+        android:textAppearance="@color/black"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/newDay"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 </androidx.constraintlayout.widget.ConstraintLayout>
