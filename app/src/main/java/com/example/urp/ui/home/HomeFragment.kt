@@ -58,41 +58,43 @@ class HomeFragment : Fragment() {
             val activityName = root.findViewById<TextView>(R.id.activityName)
             when (MainActivity.activity++) {
                 0 -> {
-                    imageView.setImageResource(R.drawable.running)
-                    point1Button.text = "Walk 1M"
-                    point5Button.text = "Walk 5M"
-                    point10Button.text = "Walk 10M"
-                    activityName.text = "Go out and walk!"
-                }
-                1 -> {
                     imageView.setImageResource(R.drawable.glass_of_water)
                     point1Button.text = "Drink 1 Cup"
                     point5Button.text = "Drink 5 Cups"
                     point10Button.text = "Drink 10 Cups"
                     activityName.text = "Drink lots of water!"
                 }
-                2 -> {
+                1 -> {
                     imageView.setImageResource(R.drawable.boy_doing_pushups)
                     point1Button.text = "Do 5 Pushup"
                     point5Button.text = "Do 25 Pushup"
                     point10Button.text = "Do 50 Pushup"
                     activityName.text = "Do some pushups!"
                 }
-                3 -> {
+                2 -> {
                     imageView.setImageResource(R.drawable.sit_up)
                     point1Button.text = "Do 5 Situps"
                     point5Button.text = "Do 25 Situps"
                     point10Button.text = "Do 50 Situps"
                     activityName.text = "Do some situps!"
                 }
-                4 -> {
+                3 -> {
                     imageView.setImageResource(R.drawable.stretch)
                     point1Button.text = "Stretch 30 secs"
                     point5Button.text = "Stretch 1 min"
                     point10Button.text = "Stretch 2 mins"
                     activityName.text = "Don't forget to stretch!"
+
+                }
+                4 -> {
+                    imageView.setImageResource(R.drawable.running)
+                    point1Button.text = "Walk 1M"
+                    point5Button.text = "Walk 5M"
+                    point10Button.text = "Walk 10M"
+                    activityName.text = "Go out and walk!"
                     MainActivity.activity = 0
                 }
+
             }
         }
 
