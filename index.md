@@ -6,6 +6,7 @@ The team is comprised of:
  - John Grear
  - Dillon Suther
  - Steven Albert
+ - Vagish Vela
 
 ## Demo of pages
 ![home](home.png) ![dash](dashboard.png)
