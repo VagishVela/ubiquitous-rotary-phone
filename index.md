@@ -7,3 +7,5 @@ The team is comprised of:
  - Dillon Suther
  - Steven Albert
 
+## Demo of pages
+![home](home.png) ![dash](dashboard.png)
