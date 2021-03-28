@@ -4,7 +4,7 @@ We built this for Falcathon 2021, as part of the "public university for the publ
 
 The team is comprised of:
  - John Grear
- - Dillon Suther
+ - Dylan Suther
  - Steven Albert
  - Vagish Vela
 
