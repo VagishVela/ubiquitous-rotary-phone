@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var score = 0
         var activity = 0
+        var chart = 0
         val activityScores = IntArray(5)
         val dailyScores: Queue<Int> = LinkedList<Int>()
         val overallDailyScores = LinkedList<Int>()

@@ -8,38 +8,21 @@
 
     <com.anychart.AnyChartView
         android:id="@+id/any_chart_view"
-        android:layout_width="418dp"
-        android:layout_height="713dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="405dp"
+        android:layout_height="459dp"
+        android:layout_marginBottom="208dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></com.anychart.AnyChartView>
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <com.anychart.AnyChartView
-        android:id="@+id/any_chart_view1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/any_chart_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/any_chart_view"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <com.anychart.AnyChartView
-        android:id="@+id/any_chart_view2"
-        android:layout_width="0dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginBottom="100dp"
+    <ImageView
+        android:id="@+id/refreshChart"
+        android:layout_width="108dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/refresh_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"></com.anychart.AnyChartView>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
