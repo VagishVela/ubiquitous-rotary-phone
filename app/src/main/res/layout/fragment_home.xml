@@ -7,43 +7,55 @@
     tools:context=".ui.home.HomeFragment">
 
     <Button
-        android:id="@+id/walk1m"
+        android:id="@+id/point1"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="200dp"
-        android:layout_marginBottom="205dp"
+        android:layout_marginBottom="180dp"
         android:text="Walk 1m"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/walk5m"
+        android:id="@+id/point5"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="205dp"
+        android:layout_marginBottom="180dp"
         android:text="Walk 5m"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/walk10m"
+        android:id="@+id/point10"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="205dp"
+        android:layout_marginBottom="180dp"
         android:text="Walk 10m"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/score"
@@ -68,26 +80,97 @@
         android:layout_marginStart="69dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="61dp"
-        android:src="@drawable/running_man"
-        app:layout_constraintBottom_toTopOf="@+id/walk1m"
+        android:layout_marginBottom="220dp"
+        android:src="@drawable/running"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/levelInfo"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="55dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="45dp"
         android:gravity="center"
-        android:text="Level: 1"
+        android:text="Level: 0"
         android:textSize="20sp"
+        android:textAppearance="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="110dp"
+        android:src="@drawable/right_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/point10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="110dp"
+        android:src="@drawable/left_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/point1"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/activityName"
+        android:layout_width="338dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Go out and walk!"
+        android:textSize="28sp"
+        android:textAppearance="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/point5"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <Button
+        android:id="@+id/newDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
+        android:text="New Day"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/score" />
+
+    <TextView
+        android:id="@+id/previousDayText"
+        android:layout_width="283dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="20sp"
+        android:textAppearance="@color/black"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/newDay"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 </androidx.constraintlayout.widget.ConstraintLayout>

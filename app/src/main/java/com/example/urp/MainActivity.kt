@@ -15,6 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     companion object {
         var score = 0
+        var activity = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
