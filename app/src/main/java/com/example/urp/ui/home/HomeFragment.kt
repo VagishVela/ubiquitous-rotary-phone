@@ -27,10 +27,6 @@ class HomeFragment : Fragment() {
     ): View? {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-//        val textView: TextView = root.findViewById(R.id.text_home)
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
 
         val scoreText = root.findViewById<TextView>(R.id.score)
         val walk1m = root.findViewById<Button>(R.id.point1)
@@ -51,6 +47,8 @@ class HomeFragment : Fragment() {
         scoreText.text = "${MainActivity.score}"
 
         // Arrows for moving
+        MainActivity.activity = 0
+
         val rightArrow = root.findViewById<ImageView>(R.id.rightArrow)
         rightArrow.setOnClickListener {
             val imageView = root.findViewById<ImageView>(R.id.imageView)
@@ -60,11 +58,11 @@ class HomeFragment : Fragment() {
             val activityName = root.findViewById<TextView>(R.id.activityName)
             when (MainActivity.activity++) {
                 0 -> {
-                    imageView.setImageResource(R.drawable.boy_doing_pushups)
-                    point1Button.text = "Do 5 Pushup"
-                    point5Button.text = "Do 25 Pushup"
-                    point10Button.text = "Do 50 Pushup"
-                    activityName.text = "Do some pushups!"
+                    imageView.setImageResource(R.drawable.running)
+                    point1Button.text = "Walk 1M"
+                    point5Button.text = "Walk 5M"
+                    point10Button.text = "Walk 10M"
+                    activityName.text = "Go out and walk!"
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.glass_of_water)
@@ -74,11 +72,11 @@ class HomeFragment : Fragment() {
                     activityName.text = "Drink lots of water!"
                 }
                 2 -> {
-                    imageView.setImageResource(R.drawable.running)
-                    point1Button.text = "Walk 1M"
-                    point5Button.text = "Walk 5M"
-                    point10Button.text = "Walk 10M"
-                    activityName.text = "Go out and walk!"
+                    imageView.setImageResource(R.drawable.boy_doing_pushups)
+                    point1Button.text = "Do 5 Pushup"
+                    point5Button.text = "Do 25 Pushup"
+                    point10Button.text = "Do 50 Pushup"
+                    activityName.text = "Do some pushups!"
                 }
                 3 -> {
                     imageView.setImageResource(R.drawable.sit_up)
@@ -107,12 +105,12 @@ class HomeFragment : Fragment() {
             val activityName = root.findViewById<TextView>(R.id.activityName)
             when (MainActivity.activity--) {
                 0 -> {
-                    imageView.setImageResource(R.drawable.boy_doing_pushups)
-                    point1Button.text = "Do 5 Pushup"
-                    point5Button.text = "Do 25 Pushup"
-                    point10Button.text = "Do 50 Pushup"
-                    activityName.text = "Do some pushups!"
-                    MainActivity.activity = 4 // This will change to max num of activities.
+                    imageView.setImageResource(R.drawable.running)
+                    point1Button.text = "Walk 1M"
+                    point5Button.text = "Walk 5M"
+                    point10Button.text = "Walk 10M"
+                    activityName.text = "Go out and walk!"
+                    MainActivity.activity = 4
                 }
                 1 -> {
                     imageView.setImageResource(R.drawable.glass_of_water)
@@ -122,11 +120,11 @@ class HomeFragment : Fragment() {
                     activityName.text = "Drink lots of water!"
                 }
                 2 -> {
-                    imageView.setImageResource(R.drawable.running)
-                    point1Button.text = "Walk 1M"
-                    point5Button.text = "Walk 5M"
-                    point10Button.text = "Walk 10M"
-                    activityName.text = "Go out and walk!"
+                    imageView.setImageResource(R.drawable.boy_doing_pushups)
+                    point1Button.text = "Do 5 Pushup"
+                    point5Button.text = "Do 25 Pushup"
+                    point10Button.text = "Do 50 Pushup"
+                    activityName.text = "Do some pushups!"
                 }
                 3 -> {
                     imageView.setImageResource(R.drawable.sit_up)
