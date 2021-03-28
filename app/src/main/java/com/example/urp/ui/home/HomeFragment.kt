@@ -144,6 +144,8 @@ class HomeFragment : Fragment() {
         }
 
         val levelinfo = root.findViewById<TextView>(R.id.levelInfo)
+        levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
+
         scoreText.doOnTextChanged { text, start, before, count ->
             levelinfo.text = "Level: ${(MainActivity.score/10).toInt()}"
         }
